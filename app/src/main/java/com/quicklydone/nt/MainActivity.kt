@@ -78,8 +78,8 @@ class MainActivity : ComponentActivity() {
 
                 val puzzles = listOf(
                     //"111" to "puzzle 1",
-                    "222" to "puzzle 16",
-                    "333" to "puzzle 3",
+                    //"222" to "puzzle 16",
+                    //"333" to "puzzle 3",
                     "matrix" to "Matrix",
                     "lightsOut" to "Hexagon",
                     "rotation" to "Cube 2×2"
@@ -95,6 +95,23 @@ class MainActivity : ComponentActivity() {
                 Button(onClick = { onSelectPuzzle("111") }) {
                     Image(
                         painter = painterResource(id = R.drawable.goal_icon),
+                        contentDescription = null,
+                        contentScale = ContentScale.Fit, // Fit, Crop, FillHeight и т.д.
+                        modifier = Modifier.size(128.dp)
+                    )
+                }
+
+                Button(onClick = { onSelectPuzzle("333") }) {
+                    Image(
+                        painter = painterResource(id = R.drawable.im4),
+                        contentDescription = null,
+                        contentScale = ContentScale.Fit, // Fit, Crop, FillHeight и т.д.
+                        modifier = Modifier.size(128.dp)
+                    )
+                }
+                Button(onClick = { onSelectPuzzle("222") }) {
+                    Image(
+                        painter = painterResource(id = R.drawable.im16),
                         contentDescription = null,
                         contentScale = ContentScale.Fit, // Fit, Crop, FillHeight и т.д.
                         modifier = Modifier.size(128.dp)

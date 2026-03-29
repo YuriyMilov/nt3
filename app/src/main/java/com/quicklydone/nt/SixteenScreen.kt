@@ -1,3 +1,4 @@
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.gestures.detectDragGestures
@@ -9,10 +10,13 @@ import androidx.compose.ui.*
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.*
 import kotlin.math.*
 import com.quicklydone.nt.Cycle
+import com.quicklydone.nt.R
 
 @Composable
 fun SixteenScreen(
@@ -70,15 +74,21 @@ fun SixteenScreen(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                Button(onClick = onBack) {
+                    Image(
+                        painter = painterResource(id = R.drawable.home),
+                        contentDescription = null,
+                        contentScale = ContentScale.Fit, // Fit, Crop, FillHeight и т.д.
+                        modifier = Modifier.size(32.dp)
+                    )
+                }
                 Button(onClick = { perm = perm.shuffled() }) {
                     Text("Scramble")
                 }
                 Button(onClick = { perm = List(count) { it + 1 } }) {
                     Text("Reset")
                 }
-                Button(onClick = onBack) {
-                    Text("Back")
-                }
+
 
             }
 
